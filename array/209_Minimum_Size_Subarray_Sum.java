@@ -7,4 +7,26 @@
 // Output: 2
 // Explanation: The subarray [4,3] has the minimal length under the problem constraint.
 
+//slider windows
 
+
+class Solution{
+    public int minSubarrayLen(int s, int[] nums){
+       if(nums.length == 0) return 0;
+       int sum = 0;
+       int result = Integer.MAX_VALUE;
+
+        int slow = 0, fast = 0; 
+        for(; fast < nums.length;fast++){
+            sum += nums[fast]
+            while(sum >= s){
+              int min = fast - slow;
+              result = Math.min(result, min);
+            }
+            sum -= nums[slow++];
+        }
+
+      return result == Integer.MAX_VALUE ? 0: result;
+
+    }
+}
